@@ -1,12 +1,18 @@
-package entity;
-
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package model;
 
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.emul.org.bson.types.ObjectId;
 import java.util.Calendar;
-import org.bson.types.ObjectId;
 
+/**
+ *
+ * @author Sebastian
+ */
 @Entity
 public class Appointment {
     
@@ -85,5 +91,5 @@ public class Appointment {
 
     public void setStatus(AppointmentStatus status) {
         this.status = status;
-    }   
+    } 
 }

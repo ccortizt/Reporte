@@ -5,27 +5,27 @@
  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="NewWebService" targetNamespace="http://facade/" xmlns:tns="http://facade/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" 
  >
-    <message name="operation2"/>
-    <message name="operation2Response"/>
-    <message name="operation1"/>
-    <message name="operation1Response"/>
+    <message name="reportBirth"/>
+    <message name="reportBirthResponse"/>
+    <message name="reportDeath"/>
+    <message name="reportDeathResponse"/>
     <portType name="Supervivencia">
-        <operation name="operation2">
-            <input message="tns:operation2"/>
-            <output message="tns:operation2Response"/>
+        <operation name="reportBirth">
+            <input message="tns:reportBirth"/>
+            <output message="tns:reportBirthResponse"/>
         </operation>
-        <operation name="operation1">
-            <input message="tns:operation1"/>
-            <output message="tns:operation1Response"/>
+        <operation name="reportDeath">
+            <input message="tns:reportDeath"/>
+            <output message="tns:reportDeathResponse"/>
         </operation>
     </portType>
     <binding name="SupervivenciaPortBinding" type="tns:Supervivencia">
         <wsp:PolicyReference URI="#SupervivenciaPortBindingPolicy"/>
-        <operation name="operation2">
+        <operation name="reportBirth">
             <input/>
             <output/>
         </operation>
-        <operation name="operation1">
+        <operation name="reportDeath">
             <input/>
             <output/>
         </operation>
@@ -53,6 +53,54 @@
         </wsp:ExactlyOne>
     </wsp:Policy>
     <wsp:Policy wsu:Id="SupervivenciaPortBinding_operation_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="SupervivenciaPortBinding_operation2_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="SupervivenciaPortBinding_operation2_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="SupervivenciaPortBinding_operation1_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="SupervivenciaPortBinding_operation1_Output_Policy">
         <wsp:ExactlyOne>
             <wsp:All>
                 <sp:EncryptedParts>

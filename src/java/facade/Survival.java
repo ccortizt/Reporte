@@ -7,6 +7,7 @@ package facade;
 import javax.jws.WebService;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
+import service.SurvivalReport;
 
 /**
  *
@@ -14,19 +15,19 @@ import javax.jws.WebMethod;
  */
 @WebService(serviceName = "NewWebService")
 @Stateless()
-public class Supervivencia {
+public class Survival {
       /**
      * Web service operation
      */
-    @WebMethod(operationName = "operation1")
-    public String reportDeath( String name) {
+    @WebMethod(operationName = "reportDeath")
+    public String reportDeath(int id) {
         
-        return name;
+        return new SurvivalReport().fallecido(id);
     }
     
-    @WebMethod(operationName = "operation2")
-    public String reportBirth( String name) {
+    @WebMethod(operationName = "reportBirth")
+    public String reportBirth(String name) {
         
-        return name;
+        return new SurvivalReport().nacido(name);
     }
 }
