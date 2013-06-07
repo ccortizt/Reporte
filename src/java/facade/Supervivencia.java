@@ -20,7 +20,7 @@ public class Supervivencia {
      */
     @WebMethod(operationName = "operation")
     public String operation( String test) {
-        
+        int i = 0;
         return test;
     }
     
