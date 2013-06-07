@@ -18,10 +18,15 @@ public class Supervivencia {
       /**
      * Web service operation
      */
-    @WebMethod(operationName = "operation")
-    public String operation( String test) {
-        int i = 0;
-        return test;
+    @WebMethod(operationName = "operation1")
+    public String reportDeath( String name) {
+        
+        return name;
     }
     
+    @WebMethod(operationName = "operation2")
+    public String reportBirth( String name) {
+        
+        return name;
+    }
 }
